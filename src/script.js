@@ -15,3 +15,44 @@ const dummyTransactions = [
 
 let transactions = dummyTransactions;
 
+// add transaction to the DOM
+function addTransactionDOM(transaction) {
+    const sign = transaction.amount < 0 ? '-' : '+';
+
+    const item = document.createElement('li');
+
+    item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
+    item.innerHTML = `
+        ${transaction.text} <span>${sign}${Math.abs(transaction.amount)}</span>
+        <button class="delete-btn">X</button>
+    `;
+
+    list.appendChild(item);
+}
+
+// update the balance, income and expense
+function udpateValues() {
+    const amounts = transactions.map((transaction) => transaction.amount);
+    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
+    const income = amounts
+        .filter((item) => item > 0)
+        .reduce((acc, item) => (acc += item), 0)
+        .toFixed(2);
+
+    const expense = amounts
+        .filter((item) => item < 0)
+        .reduce((acc, item) => (acc += item), 0)
+        .toFixed(2) * -1;
+
+    balance.innerText = `$${total}`;
+    money_plus.innerText = `$${income}`;
+    money_minus.innerText = `$${expense}`;
+}
+
+// init (es6 iify)
+{
+    list.innerHTML = '';
+    transactions.forEach(addTransactionDOM);
+    udpateValues();
+}
