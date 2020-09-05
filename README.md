@@ -1,5 +1,5 @@
 # Simple Expense Tracker
-Loosing track of all you spending. No problem. Expense tracker is here for the rescue.
+Loosing track of all you spending? No problem! Expense tracker is here for the rescue.
 
 <img src="preview.png">
 
