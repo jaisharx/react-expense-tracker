@@ -13,9 +13,11 @@ const dummyTransactions = [
     { id: 4, text: 'Camera', amount: 150 },
 ];
 
+// restoring from localstorage
 const localStorageTranscation = JSON.parse(localStorage.getItem('transcation'));
 let transactions = localStorage.getItem('transcation') ? localStorageTranscation : [];
 
+// adding transaction obj
 function addTransaction(e) {
     e.preventDefault();
 
@@ -38,14 +40,6 @@ function addTransaction(e) {
     }
 }
 
-function formatNumberToMoney(number) {
-    return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-}
-
-function generateRandomID() {
-    return Math.floor(Math.random() * 1000000);
-}
-
 // add transaction to the DOM
 function addTransactionDOM(transaction) {
     const sign = transaction.amount < 0 ? '-' : '+';
@@ -61,6 +55,7 @@ function addTransactionDOM(transaction) {
     list.appendChild(item);
 }
 
+// removing transaction obj
 function removeTransaction(id) {
     transactions = transactions.filter((transaction) => transaction.id !== id);
     updateLocalStorage();
@@ -92,12 +87,22 @@ function updateLocalStorage() {
     localStorage.setItem('transcation', JSON.stringify(transactions));
 }
 
+function formatNumberToMoney(number) {
+    return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+
+function generateRandomID() {
+    return Math.floor(Math.random() * 1000000);
+}
+
 // init
 function init() {
     list.innerHTML = '';
     transactions.forEach(addTransactionDOM);
-    udpateValues();
+    
+    udpateValues(); // updating dom values
 }
 init();
 
+// event listeners
 form.addEventListener('submit', addTransaction);
