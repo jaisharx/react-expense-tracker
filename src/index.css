@@ -87,6 +87,10 @@ h4 {
     color: #c0392b;
 }
 
+span.tip {
+    font-size: 10px;
+}
+
 label {
     display: inline-block;
     margin: 10px 0;
@@ -167,8 +171,4 @@ input[type="text"]:focus, input[type="number"]:focus {
 
 .list li:hover .delete-btn {
     opacity: 1;
-}
-
-.tip {
-    font-size: 10px;
 }
