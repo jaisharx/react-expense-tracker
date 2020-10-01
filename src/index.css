@@ -32,7 +32,7 @@ body {
 }
 
 .container-form {
-    width: 350px;   
+    width: 350px;
 }
 
 h1 {
@@ -96,7 +96,8 @@ label {
     margin: 10px 0;
 }
 
-input[type="text"], input[type="number"] {
+input[type='text'],
+input[type='number'] {
     border: 1px solid #dedede;
     border-radius: 2px;
     display: block;
@@ -105,7 +106,8 @@ input[type="text"], input[type="number"] {
     width: 100%;
 }
 
-input[type="text"]:focus, input[type="number"]:focus {
+input[type='text']:focus,
+input[type='number']:focus {
     outline: none;
     box-shadow: var(--box-shadow);
 }
@@ -123,7 +125,8 @@ input[type="text"]:focus, input[type="number"]:focus {
     width: 100%;
 }
 
-.btn:focus, .delete-btn:focus {
+.btn:focus,
+.delete-btn:focus {
     outline: 0;
 }
 
@@ -166,7 +169,7 @@ input[type="text"]:focus, input[type="number"]:focus {
     transform: translate(-100%, -50%);
 
     opacity: 0;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .list li:hover .delete-btn {
