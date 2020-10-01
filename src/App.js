@@ -10,12 +10,14 @@ function App() {
     return (
         <div>
             <Header />
-            <div className="container">
-                <Balance />
-                <IncomeExpenses />
-                <TranscationList />
+            <main className="main">
+                <div className="container-money">
+                    <Balance />
+                    <IncomeExpenses />
+                    <TranscationList />
+                </div>
                 <AddTranscation />
-            </div>
+            </main>
         </div>
     );
 }
