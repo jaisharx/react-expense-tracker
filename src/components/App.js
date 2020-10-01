@@ -6,9 +6,11 @@ import IncomeExpenses from './IncomeExpenses';
 import TranscationList from './TranscationList';
 import AddTranscation from './AddTranscation';
 
+import { GlobalProvider } from "../context/GlobalState";
+
 function App() {
     return (
-        <div>
+        <GlobalProvider>
             <Header />
             <main className="main">
                 <div className="container-money">
@@ -18,7 +20,7 @@ function App() {
                 </div>
                 <AddTranscation />
             </main>
-        </div>
+        </GlobalProvider>
     );
 }
 
